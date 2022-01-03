@@ -15,13 +15,17 @@ https://www.raywenderlich.com/5475-introduction-to-using-opencv-with-unity
 
 https://user-images.githubusercontent.com/70977089/147899739-d910ff97-7921-4744-bafe-23d8b64eaec8.mp4
 
+Flashy colors! Hand movements! Very fun! 
+
 ## Guide
 
 
 ### Movement
 
 1.) The user closes their fist to move the cube right.
+
 2.) The user opens their palm to move the cube left. 
+
 3.) The user holds a single finger up to stop the cube.
 
 ### To run
@@ -37,4 +41,5 @@ https://user-images.githubusercontent.com/70977089/147899739-d910ff97-7921-4744-
 ## Known Issues
 
 1.) Cube movement is choppy. No major impact on gameplay, but is displeasing. Will implement a fix for this eventually
+
 2.) If you launch the Unity .exe file with a visible to your webcam, it may spawn the cube out of bounds. 
