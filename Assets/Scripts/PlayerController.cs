@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public float timer;
+    public Vector3 playerSpawn;
     Thread receiveThread;
     UdpClient client;
     int port;
@@ -21,15 +22,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Debug.Log("Game Over!");
+            gameObject.isStatic = true;
+            GameObject[] Obstalces = GameObject.FindGameObjectsWithTag("Obstacle");
+            foreach(GameObject thing in Obstalces){
+                Destroy(thing);
+            }
+
+            transform.position = playerSpawn;
+   
         }
+        gameObject.isStatic = false;
     }
     // Start is called before the first frame update
     void Start()
     {
+        StaticTimer();
         port = 5065;
         left = false;
         right = false;
@@ -42,12 +52,12 @@ public class PlayerController : MonoBehaviour
     {
         if (text == "Left" && left == true && transform.position.z > -1.3)
         {  
-            transform.Translate(Vector3.back * Time.deltaTime *26f);
+            transform.Translate(Vector3.back * Time.deltaTime *16f);
             left = false;
         }
         if (text == "Right" && right == true && transform.position.z < 1.3)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * 26f);
+            transform.Translate(Vector3.forward * Time.deltaTime * 16f);
             right = false;
         }
         
@@ -64,7 +74,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void ReceiveData()
-    {
+    { 
         client = new UdpClient(port);
         while (true)
         {
@@ -94,5 +104,17 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+
+    private void StaticTimer()
+    {
+        for (timer = 0.0f; timer < 4.0f; timer += Time.deltaTime)
+        {
+            if (timer >= 3.0f)
+            {
+                gameObject.isStatic = false;
+                return;
+            }
+        }       
     }
 }
