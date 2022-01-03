@@ -318,7 +318,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1565648996
 BoxCollider:
@@ -410,7 +410,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 3
 --- !u!114 &1565649001
 MonoBehaviour:
@@ -424,6 +424,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1883847eb7b9a7b45a6737bde8a4eccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
+  playerSpawn: {x: 4.03, y: 0.3, z: -0.08}
 --- !u!1 &1721084582
 GameObject:
   m_ObjectHideFlags: 0
