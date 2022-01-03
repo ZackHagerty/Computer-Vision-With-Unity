@@ -1,6 +1,6 @@
 # Computer Vision With Unity
  
- ##Description
+ ## Description
 This is Computer Vision With Unity, a personal winter break project I built over the course of a few days. Using OpenCV, Mediapipe, and a UDP Client, the project utilizes a python script capable of identifying a user's hand gestures to navigate a randomly organized obstacle track in Unity. The project is quite simple, as my main focus was on learning how to utilize UDP and OpenCV.
 
 Use of the program REQUIRES a webcam.
@@ -9,7 +9,7 @@ The program references code from the following sources:
 
 https://www.raywenderlich.com/5475-introduction-to-using-opencv-with-unity
 
-##Features
+## Features
 
 ### Basic Program Functionality
 
